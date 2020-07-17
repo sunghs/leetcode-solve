@@ -31,19 +31,18 @@ Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
 ```java
 class Solution {
     public int[][] flipAndInvertImage(int[][] A) {
-        int[][] result = A;
-        for (int i = 0; i < result.length; i++) {
+        for (int i = 0; i < A.length; i++) {
             Stack<Integer> stack = new Stack<>();
-            for (int j = 0; j < result[i].length; j++) {
-                stack.push(result[i][j]);
+            for (int j = 0; j < A[i].length; j++) {
+                stack.push(A[i][j]);
             }
-            for (int j = 0; j < result[i].length; j++) {
+            for (int j = 0; j < A[i].length; j++) {
                 A[i][j] = stack.pop();
-                if (result[i][j] == 0) result[i][j] = 1;
-                else result[i][j] = 0;
+                if (A[i][j] == 0) A[i][j] = 1;
+                else A[i][j] = 0;
             }
         }
-        return result;
+        return A;
     }
 }
 ```
