@@ -6,14 +6,12 @@ public class Solution {
 
     }
 
-    public int numIdenticalPairs(int[] nums) {
-        int result = 0;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i; j < nums.length; j++) {
-                if (nums[i] == nums[j] && i < j) {
-                    result++;
-                }
-            }
+    public int[] shuffle(int[] nums, int n) {
+        int[] result = new int[nums.length];
+        int csr = 0;
+        for (int i = 0; i < n; i++) {
+            result[csr++] = nums[i];
+            result[csr++] = nums[i + n];
         }
         return result;
     }
