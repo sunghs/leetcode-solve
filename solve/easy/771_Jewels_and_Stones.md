@@ -7,12 +7,17 @@ The letters in J are guaranteed distinct, and all characters in J and S are lett
 Letters are case sensitive, so "a" is considered a different type of stone from "A".
 
 ### Example 1:
+```
 Input: J = "aA", S = "aAAbbbb"
 Output: 3
+```
 
 ### Example 2:
+```
 Input: J = "z", S = "ZZ"
 Output: 0
+```
+
 ```java
 class Solution {
     public int numJewelsInStones(String J, String S) {
