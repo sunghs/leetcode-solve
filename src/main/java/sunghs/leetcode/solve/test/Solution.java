@@ -20,18 +20,25 @@ public class Solution {
         return result;
     }
 
-    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        int max = 0;
-        for (int i = 0; i < candies.length; i++) {
-            max = Math.max(candies[i], max);
+    public int[] decompressRLElist(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int freq = 2 * i;
+            int val = freq + 1;
+
+            if (val > nums.length) {
+                continue;
+            }
+
+            for (int j = 0; j < nums[freq]; j++) {
+                list.add(nums[val]);
+            }
         }
 
-        System.out.println(max);
-
-        List<Boolean> result = new ArrayList<>();
-        for (int i = 0; i < candies.length; i++) {
-            int csr = candies[i] + extraCandies;
-            result.add(csr >= max);
+        int[] result = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = (int) list.get(i);
         }
         return result;
     }
