@@ -2,6 +2,7 @@ package sunghs.leetcode.solve.test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Solution {
@@ -20,26 +21,19 @@ public class Solution {
         return result;
     }
 
-    public int[] decompressRLElist(int[] nums) {
-        List<Integer> list = new ArrayList<>();
-
+    public int[] createTargetArray(int[] nums, int[] index) {
+        List<Integer> result = new LinkedList<>();
         for (int i = 0; i < nums.length; i++) {
-            int freq = 2 * i;
-            int val = freq + 1;
-
-            if (val > nums.length) {
-                continue;
-            }
-
-            for (int j = 0; j < nums[freq]; j++) {
-                list.add(nums[val]);
-            }
+            int idx = index[i];
+            int val = nums[i];
+            result.add(idx, val);
         }
 
-        int[] result = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = (int) list.get(i);
+        int[] r = new int[result.size()];
+
+        for (int i = 0; i < r.length; i++) {
+            r[i] = result.get(i).intValue();
         }
-        return result;
+        return r;
     }
 }
