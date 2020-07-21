@@ -21,19 +21,22 @@ public class Solution {
         return result;
     }
 
-    public int[] createTargetArray(int[] nums, int[] index) {
-        List<Integer> result = new LinkedList<>();
-        for (int i = 0; i < nums.length; i++) {
-            int idx = index[i];
-            int val = nums[i];
-            result.add(idx, val);
-        }
+    public int balancedStringSplit(String s) {
+        int result = 0;
+        int lCnt = 0;
+        int rCnt = 0;
+        for (char c : s.toCharArray()) {
+            if (c == 'R') {
+                rCnt++;
+            } else {
+                lCnt++;
+            }
 
-        int[] r = new int[result.size()];
-
-        for (int i = 0; i < r.length; i++) {
-            r[i] = result.get(i).intValue();
+            if (lCnt != 0 && lCnt == rCnt) {
+                result++;
+                lCnt = rCnt = 0;
+            }
         }
-        return r;
+        return result;
     }
 }
