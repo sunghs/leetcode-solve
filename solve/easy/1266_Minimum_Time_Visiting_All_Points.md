@@ -11,7 +11,7 @@ You can move according to these rules:
 - You have to visit the points in the same order as they appear in the array.
 - You are allowed to pass through points that appear later in the order, but these do not count as visits.
 
-![](./../../static/1626_example_1.png)
+![](../../static/1266.png)
 
 ### Examples:
 ```
