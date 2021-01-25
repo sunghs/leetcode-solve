@@ -4,6 +4,8 @@ The string s will be shuffled such that the character at the ith position moves 
 
 Return the shuffled string.
 
+![](./../../static/1528.jpg)
+
 ### Examples:
 ```
 Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
